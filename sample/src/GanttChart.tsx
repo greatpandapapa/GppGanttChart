@@ -1,38 +1,4 @@
-# GppGanttChart
-## 概要
-- シンプルなReactのガントチャートコンポーネント
-- ProjectPlanで使っているコンポーネント
-
-## 利用ライブラリ
-- 以下をインストールする必要あり
-```
-npm install @mui/material @emotion/react @emotion/styled
-npm install date-fns
-```
-
-## props
-- width:number
-  - ガントチャートの幅
-- height:number
-  - ガントチャートの高さ
-- data:IGppGanttData[] 
-  - 各タスクのデータ
-- links:IGppGanttLink[]
-  - 各タスク間を結ぶ線のデータ
-- config:IGppGanttConfig
-  - 設定
-- columns:IGppGanttColumns
-  - テーブル部の表示絡む
-
-## 補足
-- タスクのバーは、dataのstart_dateとend_dateで表示する
-- durationが0の場合は、バーではなく◆を表示する
-- 休日設定はconfig.holidaiesにyyyy-MM-dd形式の文字列で設定する
-  - config.date_formatでフォーマット指定すれば、その形式で登録する
-
-## サンプルコード
-```
-mport {GppGanttChart,IGppGanttConfig,GppDefaultConfig,IGppGanttData,IGppGanttColumns, IGppGanttLink} from "./GppGanttChart";
+import {GppGanttChart,IGppGanttConfig,GppDefaultConfig,IGppGanttData,IGppGanttColumns, IGppGanttLink} from "./GppGanttChart";
 
 function GanttChart() {
     const config:IGppGanttConfig = GppDefaultConfig();
@@ -63,6 +29,69 @@ function GanttChart() {
             start_date: new Date("2025-12-30"),
             end_date: new Date("2026-01-03"),
             duration: 5,
+            progress: 0
+        },
+        {
+            id: 4,
+            name: "Task2",
+            level: 99,
+            start_date: new Date("2026-01-04"),
+            end_date: new Date("2026-01-14"),
+            duration: 10,
+            progress: 0
+        },
+        {
+            id: 5,
+            name: "Task3",
+            level: 99,
+            start_date: new Date("2026-01-15"),
+            end_date: new Date("2026-01-28"),
+            duration: 10,
+            progress: 0
+        },
+        {
+            id: 6,
+            name: "Task4",
+            level: 99,
+            start_date: new Date("2026-01-28"),
+            end_date: new Date("2026-02-12"),
+            duration: 10,
+            progress: 0
+        },
+        {
+            id: 11,
+            name: "Review1",
+            level: 1,
+            start_date: new Date("2026-02-12"),
+            end_date: new Date("2026-02-12"),
+            duration: 0,
+            progress: 0
+        },
+        {
+            id: 8,
+            name: "Iteration2",
+            level: 1,
+            start_date: new Date("2026-02-15"),
+            end_date: new Date("2026-02-20"),
+            duration: 5,
+            progress: 0
+        },
+        {
+            id: 9,
+            name: "Task6",
+            level: 99,
+            start_date: new Date("2026-02-21"),
+            end_date: new Date("2026-02-28"),
+            duration: 5,
+            progress: 0
+        },
+        {
+            id: 10,
+            name: "Task7",
+            level: 99,
+            start_date: new Date("2026-03-01"),
+            end_date: new Date("2026-03-14"),
+            duration: 10,
             progress: 0
         },
     ];
@@ -124,4 +153,3 @@ function GanttChart() {
 }
 
 export default GanttChart;
-```
