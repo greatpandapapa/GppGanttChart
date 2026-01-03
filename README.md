@@ -32,7 +32,7 @@ npm install date-fns
 
 ## サンプルコード
 ```
-mport {GppGanttChart,IGppGanttConfig,GppDefaultConfig,IGppGanttData,IGppGanttColumns, IGppGanttLink} from "./GppGanttChart";
+import {GppGanttChart,IGppGanttConfig,GppDefaultConfig,IGppGanttData,IGppGanttColumns, IGppGanttLink} from "./GppGanttChart";
 
 function GanttChart() {
     const config:IGppGanttConfig = GppDefaultConfig();
